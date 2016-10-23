@@ -49,6 +49,7 @@ print(len(json_review_list))
 
 corpus = open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'corpus'),'w')
 useridcsv = open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'truncated_UserId_list.csv'), 'w')
+count = 0
 for i in range(0,len(json_review_list)):
     if json_review_list[i]['type'] == 'review':
         text = json_review_list[i]['text']
@@ -57,6 +58,7 @@ for i in range(0,len(json_review_list)):
                 corpus.write(text)
                 useridcsv.write(json_review_list[i]['user_id']+'\n')
             except:
-                pass
+                count +=1
+print(count)
 corpus.close()
 useridcsv.close()
