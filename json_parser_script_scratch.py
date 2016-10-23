@@ -22,7 +22,3 @@ with open(os.path.join(cwd, 'yelp_training_set', 'corpus'),'w') as f:
             if text:
                 f.write(text+'\n')
 f.close()
-print(len(json_review_list))
-print(json_review_list[0])
-print(type(json_review_list[0]))
-print(json_review_list[0].keys())
