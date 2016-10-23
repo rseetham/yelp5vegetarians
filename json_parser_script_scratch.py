@@ -16,10 +16,10 @@ with open(os.path.join(cwd,'yelp_training_set','yelp_training_set_review.json'))
         json_review_list.append(jfile)
 with open(os.path.join(cwd,'corpus'),'w') as f:
     for i in range(0,len(json_review_list)):
-        
-        text = json_review_list[i]['text']
-        if text:
-            f.write(text)
+        if json_review_list[i]['type'] == 'review':
+            text = json_review_list[i]['text']
+            if text:
+                f.write(text+'\n')
 print(len(json_review_list))
 print(json_review_list[0])
 print(type(json_review_list[0]))
