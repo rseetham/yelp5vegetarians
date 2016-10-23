@@ -55,7 +55,7 @@ for i in range(0,len(json_review_list)):
         if text:
             try:
                 corpus.write(text)
-                useridcsv.write(json_review_list[i]['user_id']+',')
+                useridcsv.write(json_review_list[i]['user_id']+'\n')
             except:
                 pass
 corpus.close()
