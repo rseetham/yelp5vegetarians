@@ -2,7 +2,7 @@ import json, os
 
 cwd = os.getcwd()
 json_review_list = []
-with open(os.path.join(cwd,'yelp_training_set','yelp_training_set_review.json')) as f:
+with open(os.path.join(cwd,'yelp_training_set','yelp_dataset_challenge_academic_dataset')) as f:
     jfile={}
     for line in f:
         while True:
