@@ -10,33 +10,30 @@ with open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'categori
 f.close()
 
 with open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'yelp_academic_dataset_business.json')) as f:
-    with open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'truncated_businessid.csv'), 'w') as fw:
-        jfile = {}
-        for line in f:
-            while True:
-                try:
-                    jfile = json.loads(line)
-                    break
-                except ValueError:
-                    # Not yet a complete JSON value
-                    line += next(f)
-            # do something with jfile
-            if jfile:
-                categories_set = {elem for elem in jfile['categories']}
-                # print(categories_set)
-                categories_list_set = {elem for elem in categories_list[0]}
-                # print(categories_list_set)
-                if not categories_set.isdisjoint(categories_list_set):
-                    json_businessid_list.append(jfile['business_id'])
-                    json_business_list.append(jfile)
-                    fw.write(jfile['business_id']+',')
+    jfile = {}
+    for line in f:
+        if line:
+            try:
+                jfile = json.loads(line)
+                break
+            except ValueError:
+                # Not yet a complete JSON value
+                line += next(f)
+        # do something with jfile
+        if jfile:
+            categories_set = {elem for elem in jfile['categories']}
+            # print(categories_set)
+            categories_list_set = {elem for elem in categories_list[0]}
+            # print(categories_list_set)
+            if not categories_set.isdisjoint(categories_list_set):
+                json_businessid_list.append(jfile['business_id'])
 f.close()
-fw.close()
+
 
 with open(os.path.join(cwd,'yelp_dataset_challenge_academic_dataset', 'yelp_academic_dataset_review.json')) as f:
     jfile={}
     for line in f:
-        while True:
+        if line:
             try:
                 jfile = json.loads(line)
                 break
@@ -48,7 +45,6 @@ with open(os.path.join(cwd,'yelp_dataset_challenge_academic_dataset', 'yelp_acad
             if jfile['business_id'] in json_businessid_list:
                 json_review_list.append(jfile)
 f.close()
-fw.close()
 
 print(len(json_review_list))
 
