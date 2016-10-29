@@ -62,7 +62,7 @@ newdataset.close()
 # print(len(json_review_list)) # 809706
 countratings = []
 newdataset2 = open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'dataset_1usefulreview_review_refiltered.json'),'w')
-corpus = open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'corpus_1useful_review'),'w')
+corpus = open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'corpus_1useful_review.txt'),'w')
 useridcsv = open(os.path.join(cwd, 'truncated_UserId_list2.csv'), 'w')
 ratingscsv = open(os.path.join(cwd, 'ratings.csv'), 'w')
 count = 0
