@@ -61,6 +61,7 @@ newdataset.close()
 
 # print(len(json_review_list)) # 809706
 countratings = []
+
 newdataset2 = open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'dataset_1usefulreview_review_refiltered.json'),'w')
 corpus = open(os.path.join(cwd, 'yelp_dataset_challenge_academic_dataset', 'corpus_1useful_review.txt'),'w')
 useridcsv = open(os.path.join(cwd, 'truncated_UserId_list2.csv'), 'w')
@@ -70,13 +71,14 @@ othercount = 0
 for i in range(0,len(json_review_list)):
     if json_review_list[i]['type'] == 'review':
         text = json_review_list[i]['text']
+        stars = json_review_list[i]['stars']
         if text:
             try:
                 corpus.write(text+'\n')
+                ratingscsv.write(stars+'\n')
                 useridcsv.write(json_review_list[i]['user_id']+'\n')
                 newdataset2.write(str(json_review_list[i])+'\n')
-                countratings.append(json_review_list[i]['stars'])
-                ratingscsv.write(json_review_list[i]['stars'])
+                countratings.append(stars)
                 othercount+=1
                 if othercount < 5:
                     print(str(json_review_list[i]+'\n'))
