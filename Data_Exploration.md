@@ -1,5 +1,5 @@
 # Predicting Yelp Restaurant Review Rating
-#### George Kim(A20253304), Rekha Seethamraju (A20353704)
+#### George Kim (A20253304), Rekha Seethamraju (A20353704)
 
 ### Description
 Yelp has released information about 11,537 businesses for an [acadamic challenge](https://www.yelp.com/dataset_challenge). We extracted the reviews given to food/resyaurant type of buisnesses with atleast 1 useful vote. This gave us 810689 reviews to work with. 
