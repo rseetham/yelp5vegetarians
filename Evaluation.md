@@ -24,9 +24,9 @@ SGDClassifier performed the best (taking into cosideration time, since the accur
 SGDClassifier(alpha=0.0001, l1_ratio=0.3, loss='modified_huber', n_iter=5)  
   
 For sentiment analysis, the best metric to use is the f1 score since it tell us about precision and recall. We need a high accuracy/precision but also a good recall rate. SDGClassifier peforms better that the most frequent and random classifiers.  
-Most frequent Classifier : Acc : 0.39     Recall : 0.63     F1 : 0.48  
-Random Classifier :        Acc : 0.47     Recall : 0.34     F1 : 0.37
-SDG Classifier :           Acc : 0.82     Recall : 0.84     F1 : 0.82
+Most frequent Classifier : Acc : 0.39     Recall : 0.63     F1 : 0.48    
+Random Classifier :        Acc : 0.47     Recall : 0.34     F1 : 0.37  
+SDG Classifier :           Acc : 0.82     Recall : 0.84     F1 : 0.82  
        
 ### Refrences 
 (http://scikit-learn.org/stable/auto_examples/text/document_classification_20newsgroups.html)  
